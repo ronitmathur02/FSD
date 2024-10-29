@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    .parent{
+        border :2px solid blue;
+        display: flex;
+        height: 600px;
+        background-color: rgb(163, 163, 230);
+        
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; 
+        flex-wrap: wrap;
+    }
+    .box{
+        border: 2px solid red;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(57, 152, 180);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #box-1{
+        order:1;
+        flex-grow: 0;
+        flex-shrink: 2;
+    }
+</style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box" id="Box-1">box-1</div>
+        <div class="box" id="Box-2">box-2</div>
+        <div class="box" id="Box-3">box-3</div>
+        <div class="box" id="Box-4">box-4</div>
+        <div class="box" id="Box-5">box-5</div>
+       
+    </div>
+    
+</body>
+</html>
