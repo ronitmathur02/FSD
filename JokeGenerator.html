@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Generator</title>
+   
+
+</head>
+<body>
+    
+    <h2>Random Joke Generator</h2>
+    <p id="joke">Click the button to get a joke!</p>
+    <button onclick="getJoke()" style="background-color:green" >Get Joke</button>
+    <button onclick="clearjoke()" style="background-color:red">clear joke</button>
+
+    
+    
+    
+
+    <script>
+        function getJoke() {
+            fetch("https://v2.jokeapi.dev/joke/Any")
+                .then(response => response.json())
+                .then(data => {
+                    if (data.type === "single") {
+                        document.getElementById("joke").innerText = data.joke;
+                    } else {
+                        document.getElementById("joke").innerText = data.setup + " " + data.delivery;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("joke").innerText = " something went wrong.";
+                });
+        }
+    </script>
+</body>
+</html>
